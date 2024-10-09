@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "library-infos-client-side-solution",
+    "id": "2d2590bc-fae1-49b9-b10f-c889916a7671",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.20.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "library-infos description"
+      },
+      "longDescription": {
+        "default": "library-infos description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "library-infos Feature",
+        "description": "The feature that activates elements of the library-infos solution.",
+        "id": "ebdae67d-cd23-4833-8f81-3671f8a1b6dc",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/library-infos.sppkg"
+  }
+}
