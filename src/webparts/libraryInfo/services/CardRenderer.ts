@@ -2,6 +2,14 @@ import { ICardInfo } from '../interfaces/ICardInfo';
 import styles from '../LibraryInfoWebPart.module.scss';
 
 export class CardRenderer {
+    /**
+     * Creates a Google Maps URL from an address string
+     */
+    private static createGoogleMapsLink(address: string): string {
+        const encodedAddress = encodeURIComponent(address);
+        return `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+    }
+
     public static renderCards(data: ICardInfo[]): string {
         return data.map((item, index) => `
             <div class="${styles.cardContainer}">
@@ -14,12 +22,17 @@ export class CardRenderer {
                         <div class="${styles.cardDetails}">
                             ${item.location ? `
                                 <div class="${styles.locationInfo}">
-                                    <span>Standort:</span>
-                                    <span>${item.location}</span>
+                                    <span class="${styles.label}">Standort:</span>
+                                    <a href="${this.createGoogleMapsLink(item.location)}" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       class="${styles.locationLink}">
+                                        ${item.location}
+                                    </a>
                                 </div>` : ''}
                             ${item.openingHours ? `
                                 <div class="${styles.hoursInfo}">
-                                    <span>Öffnungszeiten:</span><br>
+                                    <span class="${styles.label}">Öffnungszeiten:</span><br>
                                     <span>${item.openingHours.split('\n').join('<br>')}</span>
                                 </div>` : ''}
                         </div>

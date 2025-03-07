@@ -13,17 +13,23 @@ export default class LibraryInfoWebPart extends BaseClientSideWebPart<ILibraryIn
                 <div id="${styles.radioContainer}">
                     <input type="radio" id="libraries" name="option" value="libraries" checked>
                     <label for="libraries">
-                        <h1 class="${styles.title}">Bibliotheken</h1>
+                        <h1 class="${styles.title}">
+                            <img class="${styles.icon}" src="${require('./assets/libraries.svg')}"/>
+                        </h1>
                     </label>
 
                     <input type="radio" id="studyrooms" name="option" value="studyrooms">
                     <label for="studyrooms">
-                        <h1 class="${styles.title}">Lernräume</h1>
+                        <h1 class="${styles.title}">
+                            <img class="${styles.icon}" src="${require('./assets/lernraum.svg')}"/>
+                        </h1>
                     </label>
 
                     <input type="radio" id="buildings" name="option" value="buildings">
                     <label for="buildings">
-                        <h1 class="${styles.title}">Fakultätsgebäude</h1>
+                        <h1 class="${styles.title}">
+                            <img class="${styles.icon}" src="${require('./assets/uni.svg')}"/>
+                        </h1>
                     </label>
                 </div>
                 <div id="${styles.infoContainer}"></div>
